@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OCR Converter - Offline Version (JS)</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/tesseract.js@v5/dist/tesseract.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>OCR Converter (Offline Mode - JS)</h1>
+            <div class="nav-links">
+                <a href="index.php">Online Version (PHP + Agnes AI)</a>
+            </div>
+        </header>
+
+        <main>
+            <div class="upload-section">
+                <input type="file" id="image-input" accept="image/*" style="display: none;">
+                <button id="choose-btn">Choose Image</button>
+                <div class="preview-container">
+                    <img id="image-preview" src="" alt="Preview" style="display: none;">
+                    <span id="file-name" class="file-info"></span>
+                </div>
+            </div>
+
+            <div class="actions">
+                <button id="start-ocr-btn" disabled>Start Offline OCR</button>
+                <button id="clear-btn">Clear</button>
+            </div>
+
+            <div id="status-box" class="status-box">Ready (Browser Offline Mode)</div>
+
+            <div class="editor-section">
+                <textarea id="ocr-textarea" placeholder="Recognized text will appear here..."></textarea>
+                <div class="editor-actions">
+                    <button id="copy-btn">Copy Text</button>
+                    <button id="print-btn">Print</button>
+                    <button id="export-word-btn">Export to Word</button>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="offline-app.js"></script>
+</body>
+</html>
